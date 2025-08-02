@@ -5,7 +5,7 @@ function generateRandomNumber(min,max) {
 
 function getPlayerGuess(){
     while(true){
-        let guess = prompt("Enter a number between 1 and 100 (hint:make all 10 of your guesses the same number,its the best method.");
+        let guess = prompt("Enter a number between 1 and 100 (hint:make all 10 of your guesses the same number,its the best method.)");
         if(guess === null){
             return null;
         }
@@ -33,23 +33,21 @@ function game() {
     const randNum = generateRandomNumber();
     const maxAttempts = 10;
     let attempts = 0;
-    
     console.log("Please enter a number between 1 and 100");
-
     while(attempts < maxAttempts) {
         const pGuess = getPlayerGuess();
-
-        if (pGuess === null) return;
-
+        if (pGuess === null) 
+        return;
         attempts ++;
-
         const res = checkGuess(pGuess, randNum);
         console.log(`Attempt ${attempts}: ${pGuess}`);
-        if (res === "You guessed correctly! You must be cheating." ) {
+        if (res === "You guessed correctly! You must be cheating." ) 
+            {
             console.log(`You answered correctly in ${attempts} attempts!`);
             }
-    }
-    console.log(`You have no more attempts left. The number was ${randNum}. You suck.`);
+        }
+        console.log(`You have no more attempts left. The number was ${randNum}. You suck.`);
+        
 }
 
 
