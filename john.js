@@ -41,13 +41,12 @@ function game() {
         attempts ++;
         const res = checkGuess(pGuess, randNum);
         console.log(`Attempt ${attempts}: ${pGuess}`);
-        if (res === "You guessed correctly! You must be cheating." ) 
-            {
-            console.log(`You answered correctly in ${attempts} attempts!`);
-            }
-        }
+        if (pGuess === randNum) break; 
+    }   
+    console.log(`You answered correctly in ${attempts} attempts!`);
+    if (attempts > maxAttempts) {
         console.log(`You have no more attempts left. The number was ${randNum}. You suck.`);
-        
+    }
 }
 
 
